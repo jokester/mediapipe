@@ -226,8 +226,8 @@ class BuildBinaryGraphs(build.build):
         'face_detection/face_detection_full_range_cpu',
         'face_landmark/face_landmark_front_cpu',
         'hand_landmark/hand_landmark_tracking_cpu',
-        'holistic_landmark/holistic_landmark_cpu', 'objectron/objectron_cpu',
-        'pose_landmark/pose_landmark_cpu',
+        'holistic_landmark/holistic_landmark_gpu', 'objectron/objectron_cpu',
+        'pose_landmark/pose_landmark_cpu'
         'selfie_segmentation/selfie_segmentation_cpu'
     ]
     for binary_graph in binary_graphs:
@@ -242,8 +242,8 @@ class BuildBinaryGraphs(build.build):
         'bazel',
         'build',
         '--compilation_mode=opt',
-        '--copt=-DNDEBUG',
-        '--define=MEDIAPIPE_DISABLE_GPU=1',
+        '--copt=-DMESA_EGL_NO_X11_HEADERS',
+        '--copt=-DEGL_NO_X11',
         '--action_env=PYTHON_BIN_PATH=' + _normalize_path(sys.executable),
         os.path.join('mediapipe/modules/', graph_path),
     ]
@@ -299,8 +299,8 @@ class BuildBazelExtension(build_ext.build_ext):
         'bazel',
         'build',
         '--compilation_mode=opt',
-        '--copt=-DNDEBUG',
-        '--define=MEDIAPIPE_DISABLE_GPU=1',
+        '--copt=-DMESA_EGL_NO_X11_HEADERS',
+        '--copt=-DEGL_NO_X11',
         '--action_env=PYTHON_BIN_PATH=' + _normalize_path(sys.executable),
         str(ext.bazel_target + '.so'),
     ]
