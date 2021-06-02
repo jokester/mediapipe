@@ -67,10 +67,13 @@ cc_library(
         "//mediapipe/modules/face_landmark:face_landmark_front_cpu",
         "//mediapipe/modules/hand_landmark:hand_landmark_tracking_cpu",
         "//mediapipe/modules/holistic_landmark:holistic_landmark_cpu",
+        "//mediapipe/modules/holistic_landmark:holistic_landmark_gpu",
         "//mediapipe/modules/objectron:objectron_cpu",
         "//mediapipe/modules/palm_detection:palm_detection_cpu",
         "//mediapipe/modules/pose_detection:pose_detection_cpu",
         "//mediapipe/modules/pose_landmark:pose_landmark_by_roi_cpu",
         "//mediapipe/modules/pose_landmark:pose_landmark_cpu",
+        "//mediapipe/gpu:image_frame_to_gpu_buffer_calculator",
+        "//mediapipe/calculators/image:color_convert_calculator",
     ],
 )
