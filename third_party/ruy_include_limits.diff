@@ -1,0 +1,12 @@
+diff --git a/ruy/block_map.h b/ruy/block_map.h
+index 0057509f..33fdfe9a 100644
+--- ruy/block_map.h
++++ ruy/block_map.h
+@@ -18,6 +18,7 @@ limitations under the License.
+ 
+ #include "ruy/cpu_cache_params.h"
+ #include "ruy/side_pair.h"
++#include <limits>
+ 
+ namespace ruy {
+ 

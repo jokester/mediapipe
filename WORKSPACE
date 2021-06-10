@@ -407,3 +407,17 @@ load("@org_tensorflow//tensorflow:workspace3.bzl", "tf_workspace3")
 tf_workspace3()
 load("@org_tensorflow//tensorflow:workspace2.bzl", "tf_workspace2")
 tf_workspace2()
+
+# copied from @org_tensorflow , with patch to fix compile error in its ruy dependency
+http_archive(
+    name = "ruy",
+    sha256 = "dbfee92fcf9d6a767e9689ca46aa6c1ec4eb8fe69376bacff45dd875226d0ba1",
+    strip_prefix = "ruy-38a9266b832767a3f535a74a9e0cf39f7892e594",
+    urls = [
+        "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/ruy/archive/38a9266b832767a3f535a74a9e0cf39f7892e594.zip",
+        "https://github.com/google/ruy/archive/38a9266b832767a3f535a74a9e0cf39f7892e594.zip",
+    ],
+    patches = [
+        "@//third_party:ruy_include_limits.diff",
+    ],
+)
