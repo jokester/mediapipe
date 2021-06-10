@@ -156,7 +156,9 @@ cc_library(
         ],
     }),
     hdrs = ["gl_context.h"],
-    copts = select({
+    copts = [
+        "-DMEDIAPIPE_OMIT_EGL_WINDOW_BIT"
+    ] + select({
         "//conditions:default": [],
         "//mediapipe:apple": [
             "-x objective-c++",
