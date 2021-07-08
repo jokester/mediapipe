@@ -227,8 +227,8 @@ class BuildBinaryGraphs(build.build):
         'face_landmark/face_landmark_front_cpu',
         'hand_landmark/hand_landmark_tracking_cpu',
         'holistic_landmark/holistic_landmark_gpu', 'objectron/objectron_cpu',
-        'pose_landmark/pose_landmark_cpu'
-        'selfie_segmentation/selfie_segmentation_cpu'
+        'pose_landmark/pose_landmark_cpu',
+        'selfie_segmentation/selfie_segmentation_cpu',
     ]
     for binary_graph in binary_graphs:
       sys.stderr.write('generating binarypb: %s\n' %
